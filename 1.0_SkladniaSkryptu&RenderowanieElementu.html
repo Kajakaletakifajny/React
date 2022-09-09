@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.19.0/babel.min.js"
+      integrity="sha512-g9FNDzZ0L1+NX84LEwshW1z3FXXTMZccijKm3c7GQGHP440YRJ5JN57OzrJvdHMEWazpbDyh21x/AaAq+gOmmw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- div#content$.item${item$}*7 -->
+    <!-- #-id .-klasa {}-zawartosc -->
+    <!-- <div id="content1" class="item1">item1</div>
+    <div id="content2" class="item2">item2</div>
+    <div id="content3" class="item3">item3</div>
+    <div id="content4" class="item4">item4</div>
+    <div id="content5" class="item5">item5</div>
+    <div id="content6" class="item6">item6</div>
+    <div id="content7" class="item7">item7</div> -->
+
+    <div id="kot"></div>
+    <div id="item"></div>
+    <div id="item-embend"></div>
+
+    <script type="text/babel">
+      //   const root1 = ReactDOM.createRoot(document.getElementById("item"));
+      //   const name = "Kacper";
+      //   root1.render(<h2>{name} Lenski</h2>);
+
+      const formatName = (user) => {
+        return user.firstName + " " + user.lastName;
+      };
+
+      function getGreeting(user) {
+        if (user) {
+          return <h1>Witaj, {formatName(user)}!</h1>;
+        }
+        return <h1>Witaj, nieznajomy.</h1>;
+      }
+
+      const user = {
+        firstName: "Grzegorz",
+        lastName: "Brzęczyszczykiewicz",
+        avatarUrl:
+          "https://cdn.pixabay.com/photo/2022/09/02/19/04/sunflower-7428212_960_720.jpg",
+      }; //przygotowanie do wstrzykniecia
+
+      const elementEmbed = (
+        <div>
+          <h1>Witaj!</h1>
+          <h2>Dobrze cię widzieć.</h2>
+        </div>
+      );
+
+      const element = getGreeting(user); //co chcemy wstrzykiwac
+
+      const root = ReactDOM.createRoot(document.getElementById("item"));
+
+      root.render(element); //wstrzykujemy
+
+      const element1 = <img src={user.avatarUrl}></img>;
+
+      const root1 = ReactDOM.createRoot(document.getElementById("kot")); //gdzie chcemy wstrzykiwac
+
+      root1.render(element1);
+
+      const rootEmbed = ReactDOM.createRoot(
+        document.getElementById("item-embend")
+      );
+
+      rootEmbed.render(elementEmbed);
+
+      // JSX to string prawidlowo interpretujacy znaczniki html oraz wyrazenia jsx
+      // ujete w nawiasach klamrowych
+      // JSX wystepuje tylko w elemencie ktory mamy renderowac
+      // pozostaly kod w skrypcie to JS
+
+      // Note: this structure is simplified
+      // To jest obiekt zwany elementm reactowym - w ten sposob react obsluguje wezly swojego wirtualnego drzewa DOM
+      // const element = {
+      //   type: 'h1',
+      //   props: {
+      //     className: 'greeting',
+      //     children: 'Witaj, świecie'
+      //   }
+      // };
+
+    </script>
+  </body>
+</html>
