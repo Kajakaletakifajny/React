@@ -1,0 +1,24 @@
+$ git init
+
+$ git add *
+
+$ git commit -m "first commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+$ git config --global user.email "wyslijtokajaki@gmail.com"
+
+$   git config --global user.name "Kajak"
+
+$ git commit -m "first commit"
+
+$ git push -u origin main
