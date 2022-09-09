@@ -68,17 +68,18 @@
         </div>
       );
 
-      const element = getGreeting(user); //co chcemy wstrzykiwac
+      const element = <div>{getGreeting(user)}
+      <img src={user.avatarUrl}></img></div>; //co chcemy wstrzykiwac
 
       const root = ReactDOM.createRoot(document.getElementById("item"));
 
       root.render(element); //wstrzykujemy
 
-      const element1 = <img src={user.avatarUrl}></img>;
+      //const element1 = <img src={user.avatarUrl}></img>;
 
-      const root1 = ReactDOM.createRoot(document.getElementById("kot")); //gdzie chcemy wstrzykiwac
+      //const root1 = ReactDOM.createRoot(document.getElementById("kot")); //gdzie chcemy wstrzykiwac
 
-      root1.render(element1);
+      //root1.render(element1);
 
       const rootEmbed = ReactDOM.createRoot(
         document.getElementById("item-embend")

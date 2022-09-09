@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.19.0/babel.min.js"
+      integrity="sha512-g9FNDzZ0L1+NX84LEwshW1z3FXXTMZccijKm3c7GQGHP440YRJ5JN57OzrJvdHMEWazpbDyh21x/AaAq+gOmmw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function Welcome(props) {
+        return <h1>Cześć, {props.name}</h1>;
+      } //komponent JSX
+
+      //       class Welcome extends React.Component {
+      //   render() {
+      //     return <h1>Cześć, {this.props.name}</h1>;
+      //   }
+      // };
+      // wywolujemy komponent i okreslamy jego wartosc
+      //moje
+      // komponent klasowy
+      // extends React.Component - rozszerzamy klase React.Component o return <h1>Cześć, {this.props.name}</h1>
+      // czyli tworzymy nowa klase Welcome z zawartoscia Component z Reacta plus dodajemy swoja czesc
+
+      // const element = <Welcome name="Sara" />;
+      // const root = ReactDOM.createRoot(document.getElementById('root'));
+      // root.render(element);
+
+      function App() {
+        return (
+          <div>
+            <Welcome name="Sara" />
+            <Welcome name="Cahal" />
+            <Welcome name="Edite" />
+          </div>
+        );
+      }
+
+      const element = <App />;
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(element);
+    </script>
+  </body>
+</html>

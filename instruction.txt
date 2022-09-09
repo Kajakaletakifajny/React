@@ -22,3 +22,5 @@ $   git config --global user.name "Kajak"
 $ git commit -m "first commit"
 
 $ git push -u origin main
+
+$ git pull https://github.com/Kajakaletakifajny/React.git
