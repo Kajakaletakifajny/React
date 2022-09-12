@@ -27,9 +27,15 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      function Welcome(props) {
-        return <h1>Cześć, {props.name}</h1>;
-      } //komponent JSX
+
+      // function Welcome(props) {
+      //   return <h1>Cześć, {props.name}</h1>;
+      // } //komponent JSX
+
+        //komponent funkcyjny ES6
+        //const Welcome = (props) =>{
+        //  return <h1>Czesc, {props.name}<h1>;
+        //}
 
       //       class Welcome extends React.Component {
       //   render() {
@@ -46,12 +52,21 @@
       // const root = ReactDOM.createRoot(document.getElementById('root'));
       // root.render(element);
 
+      //komponent ES5
+      function Welcome(props){
+        return(
+          <div>
+            <h1>Czesc, {props.name}</h1><h1>masz lat: {props.age}</h1>
+          </div>
+        );
+      }
+
       function App() {
         return (
           <div>
-            <Welcome name="Sara" />
-            <Welcome name="Cahal" />
-            <Welcome name="Edite" />
+            <Welcome name="Sara" age="20"/>
+            <Welcome name="Cahal" age="15"/>
+            <Welcome name="Edite" age="10"/>
           </div>
         );
       }
