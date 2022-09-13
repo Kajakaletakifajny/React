@@ -36,15 +36,30 @@
       const courseList = courseNames.map((item) => <li>{item}</li>);
 
       function Welcome(props) {
+        function handleSubmit(event) {
+          event.preventDefault();
+          const name = document.getElementById("idName");
+          console.log(name.value);
+        }
+        const listItems = props.courseName.map((course, index) => (
+          <li key={index}>{course}</li>
+        ));
+
         return (
           <div>
-            <h2>Liczba kursow: {props.courseName}</h2>
+            <h2>Liczba kursow: {props.courseName.length}</h2>
             <ol>{courseList}</ol>
-            <form>
+            <form onSubmit={handleSubmit}>
               <label>Imie i nazwisko</label>
-              <input type="text"></input>
+              <input type="text" name="nameName" id="idName"></input>
               <label>Numer kursu</label>
-              <input type="text"></input>
+              <input
+                type="number"
+                name="nameCourse"
+                id="idCourse"
+                min="1"
+                max={props.courseName.length}
+              ></input>
               <input type="submit" value="Zapisz do kursu"></input>
             </form>
           </div>
