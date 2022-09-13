@@ -1,0 +1,16 @@
+.inputBlock{
+    display: block;
+    cursor: pointer;
+}
+
+#idName:hover{
+    background-color: rgb(159, 228, 228);
+}
+
+#idCourse:hover{
+    background-color: rgb(159, 228, 228);
+}
+
+#submit{
+    margin-top: 20px;
+}
